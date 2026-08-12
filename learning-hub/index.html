@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Learning Hub</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="shell">
+    <aside class="sidebar">
+      <div class="brand"><span class="brand-mark">✦</span><span>my learning hub</span></div>
+      <p class="eyebrow">LANGCHAIN COURSE</p>
+      <nav>
+        <a class="active" href="#overview">Overview</a>
+        <a href="#topics">Topics</a>
+        <a href="#quiz">Quiz me</a>
+      </nav>
+      <div class="sidebar-note">
+        <span class="dot"></span>
+        <div><strong>Keep going</strong><br /><small>Your progress is saved locally.</small></div>
+      </div>
+    </aside>
+
+    <section class="content">
+      <header class="topbar"><span class="course-tag">TODAY'S SESSION</span><span id="date"></span></header>
+      <section id="overview" class="hero">
+        <div>
+          <p class="eyebrow accent">PERSONAL STUDY SPACE</p>
+          <h1>Build your<br /><em>understanding.</em></h1>
+          <p class="intro">A calm place to revisit what you learned today, then test yourself when you’re ready.</p>
+          <a class="primary" href="#quiz">Start a quick quiz <span>→</span></a>
+        </div>
+        <div class="progress-card">
+          <div class="ring" id="ring"><span id="progress-percent">0%</span></div>
+          <p>SESSION PROGRESS</p>
+          <strong><span id="completed-count">0</span> of <span id="total-count">8</span> checks complete</strong>
+        </div>
+      </section>
+
+      <section id="topics" class="section-block">
+        <div class="section-heading"><div><p class="eyebrow accent">WHAT WE COVERED</p><h2>Today's topics</h2></div><span class="muted">8 learning checks</span></div>
+        <div class="topic-grid" id="topic-grid"></div>
+      </section>
+
+      <section id="quiz" class="quiz-panel">
+        <div class="section-heading"><div><p class="eyebrow accent">RECALL &amp; PRACTICE</p><h2>Quiz me</h2></div><span class="quiz-score" id="score-label">Ready when you are</span></div>
+        <div class="quiz-card">
+          <div class="question-meta"><span id="question-number">QUESTION 1 / 8</span><span id="question-topic">Git foundations</span></div>
+          <h3 id="question-text"></h3>
+          <div id="answers" class="answers"></div>
+          <div id="feedback" class="feedback" aria-live="polite"></div>
+          <button class="next-button" id="next-button" disabled>Choose an answer</button>
+        </div>
+      </section>
+      <footer>Made for your LangChain learning journey · <button id="reset-button">Reset quiz progress</button></footer>
+    </section>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>
